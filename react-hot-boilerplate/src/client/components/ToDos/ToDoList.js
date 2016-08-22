@@ -21,10 +21,13 @@ export default class ToDoList extends React.Component {
         <ul>
           {this.props.todos.length ?
             this.props.todos.map(todo =>
-              <ToDo
-                key={todo.index}
-                {...todo}
-              />
+              !todo.completed ?
+                <ToDo
+                  key={todo.index}
+                  removeToDo={this.props.removeToDo}
+                  {...todo}
+                /> :
+                null
           )
           : null}
         </ul>

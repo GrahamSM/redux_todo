@@ -8,11 +8,16 @@ export default class ToDo extends React.Component {
         super(props);
     }
 
+  _removeToDo = () =>{
+    this.props.removeToDo(this.props.index)
+  }
+
     render(){
       return(
         <div>
           <figure className="todo-item">
             {this.props.text}
+            <button onClick={this._removeToDo}>Delete</button>
           </figure>
         </div>
       )

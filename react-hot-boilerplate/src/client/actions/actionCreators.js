@@ -8,3 +8,10 @@ export function addToDo(text, index){
     index
   }
 }
+
+export function removeToDo(index){
+  return{
+    type: 'REMOVE_TODO',
+    index
+  }
+}

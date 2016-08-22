@@ -13,8 +13,17 @@ function todo(state={}, action){
     case 'ADD_TODO' :
       return {
         text: action.text,
-        index: action.index
+        index: action.index,
+        completed: false
       }
+    case 'REMOVE_TODO' :
+      if (state.index != action.index){
+        return state //If the state's index value (current todo) doesn't equal that of the action payload
+      }
+      return Object.assign({}, state, {
+        completed: !state.completed
+      })
+      return {}
     default:
       return state
   }
@@ -27,6 +36,10 @@ function todos(state = defaultState, action){
         ...state,
         todo(undefined, action)
       ]
+    case 'REMOVE_TODO' :
+      return state.map(t =>
+        todo(t, action)
+      )
     default:
       return state;
   }
