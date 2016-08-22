@@ -17,10 +17,18 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   module: {
-    loaders: [{
-      test: /\.js$/,
-      loaders: ['react-hot', 'babel'],
-      include: path.join(__dirname, 'src')
-    }]
-  }
+    loaders: [
+      { test: /\.css$/, loader: "style-loader!css-loader" },
+      {
+        test: /\.jsx?$/, // A regexp to test the require path. accepts either js or jsx
+        loaders: ['react-hot','babel'], // The module to load. "babel" is short for "babel-loader"
+        exclude: /node_modules/,
+        include: path.join(__dirname, 'src')
+      },
+      {
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass"]
+      }
+    ]
+  },
 };

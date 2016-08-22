@@ -1,9 +1,10 @@
 //ACTION CREATORS
 
 // increment
-export function addToDo(text){
+export function addToDo(text, index){
   return{
     type: 'ADD_TODO',
-    text
+    text,
+    index
   }
 }

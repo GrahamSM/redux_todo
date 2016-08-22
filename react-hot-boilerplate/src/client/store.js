@@ -5,13 +5,8 @@ import { browserHistory } from 'react-router';
 // import the root reducer
 import rootReducer from './reducers/index';
 
-// import data
 
-// create object for default data
-const defaultState = {};
-
-const store = createStore(rootReducer,
-  defaultState);
+const store = createStore(rootReducer, window.devToolsExtension && window.devToolsExtension());
 
 export const history = syncHistoryWithStore(
   browserHistory, store);

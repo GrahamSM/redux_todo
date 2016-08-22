@@ -4,18 +4,34 @@
 
 // 2. A copy of the current state
 
-//Default parameter for state is an empty array!
-function todos(state = [], action){
-  debugger;
+const defaultState = {
+ todos: null
+};
+
+function todo(state={}, action){
   switch(action.type){
     case 'ADD_TODO' :
+      return {
+        text: action.text,
+        index: action.index
+      }
+    default:
+      return state
+  }
+}
+
+function todos(state = defaultState, action){
+  switch(action.type){
+    case 'ADD_TODO' :
+      return [
+        ...state,
+        todo(undefined, action)
+      ]
     default:
       return state;
   }
   return state
 }
-// We write a switch statement under each reducer to identify component related actions, and react
-// accordingly!
 
 
 export default todos;

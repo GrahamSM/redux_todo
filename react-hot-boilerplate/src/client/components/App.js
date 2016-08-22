@@ -5,6 +5,7 @@ import Main from './main';
 
 function mapStateToProps(state){
   return {
+    todos: state.todos
   }
 }
 
@@ -14,6 +15,5 @@ function mapDispatchToProps(dispatch){
 
 const App = connect(mapStateToProps, mapDispatchToProps)(Main);
 //Takes regular main component, and adds all of the data, action creators, etc..
-// TODO: Review what is going on here!
 
 export default App;

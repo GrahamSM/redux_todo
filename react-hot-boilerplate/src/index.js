@@ -4,7 +4,8 @@ import { render } from 'react-dom';
 
 // Import components
 import App from './client/components/App';
-import ToDo from './client/components/ToDo'
+import ToDoList from './client/components/ToDos/ToDoList';
+
 
 // Import react router deps
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
@@ -15,7 +16,7 @@ const router = (
   <Provider store={store}>
     <Router history={history}>
       <Route path='/' component={App}>
-        <IndexRoute component={ToDo}></IndexRoute>
+        <IndexRoute component={ToDoList}></IndexRoute>
       </Route>
     </Router>
   </Provider>
