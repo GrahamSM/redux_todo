@@ -1,0 +1,29 @@
+.list-body{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input-todo{
+  width:200px;
+  margin: 5px;
+}
+
+.todo-button{
+  width: 100px;
+  border: 1px solid black;
+  color: white;
+  background: black;
+  cursor: pointer;
+  &:hover{
+    width: 100px;
+    border: 1px solid white;
+    color: black;
+    background: white;
+    cursor: pointer;
+  }
+}
+
+.todo-action-items{
+  display: flex;
+}

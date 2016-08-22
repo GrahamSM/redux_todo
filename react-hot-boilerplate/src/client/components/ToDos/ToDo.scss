@@ -1,6 +1,23 @@
 .todo-item{
   border: 1px solid black;
-  width:100px;
-  border-radius: 5px;
+  width: 300px;
   padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-todo{
+  border: 1px solid white;
+  color: white;
+  background: red;
+  &:hover{
+    border: 1px solid red;
+    color: red;
+    background: white;
+    cursor: pointer;
+  }
+}
+
+.input-todo{
+  outline: none;
 }

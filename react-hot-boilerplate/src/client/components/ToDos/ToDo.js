@@ -17,7 +17,7 @@ export default class ToDo extends React.Component {
         <div>
           <figure className="todo-item">
             {this.props.text}
-            <button onClick={this._removeToDo}>Delete</button>
+            <button className="delete-todo" onClick={this._removeToDo}>Delete</button>
           </figure>
         </div>
       )
